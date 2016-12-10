@@ -1,0 +1,19 @@
+import bs4 as bs
+import urllib.request
+
+sauce = urllib.request.urlopen('https://facebook.com/').read()
+soup = bs.BeautifulSoup(sauce, 'html.parser')
+
+nav = soup.script
+
+for url in nav:
+    print(url.string)
+
+
+body = soup.body
+for paragraph in body.find_all('p'):
+    print(paragraph.text)
+
+
+for div in soup.find_all('div', class_='audiocaptcha'):
+    print(div.text)
