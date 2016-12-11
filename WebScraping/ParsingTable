@@ -1,0 +1,24 @@
+import bs4 as bs
+import urllib.request
+import pandas as pd
+
+
+sauce = urllib.request.urlopen('https://www.youtube.com').read()
+soup = bs.BeautifulSoup(sauce, 'html.parser')
+
+#table = soup.table
+#table = soup.find('table')
+#table_rows = table.find_all('tr')
+
+'''
+for tr in table.rows:
+    td = tr.find_all('td')
+    row = [i.text for i in td]
+    print(row)
+
+'''
+
+
+dfs = pd.read_html('https://www.youtube.com/playlist?list=PLAwxTw4SYaPlH16rY8KgDwciMZPxCnCX_', header=0)
+for df in dfs:
+    print(df)
