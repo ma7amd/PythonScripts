@@ -48,4 +48,6 @@ def solution(N):
             return 0
 
 
-solution(0
+solution(0)
+solution(15)
+solution(1041)
