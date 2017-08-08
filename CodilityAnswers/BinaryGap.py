@@ -51,3 +51,22 @@ def solution(N):
 solution(0)
 solution(15)
 solution(1041)
+
+
+
+# Another way to solve it
+'''
+def solution(N):
+    binary = '{0:b}'.format(N)
+    stripd = binary.strip("0")
+    print(stripd)
+    splited = binary.split("1")
+    print(splited)
+    bg = max(splited)
+    #bg = max('{0:b}'.format(N).strip('0').split('1'))
+    return 0 if bg == '' else len(bg)
+
+print(solution(0))
+print(solution(15))
+print(solution(1041))
+'''
